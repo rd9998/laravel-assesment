@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import { Link } from '@inertiajs/vue3';
 import { useForm } from "@inertiajs/vue3";
-
+import moment from "moment"
 const props = defineProps({
     books: {
         type: Object,
@@ -11,21 +11,26 @@ const props = defineProps({
     },
 });
 
-
+const format_date=(value)=>{
+         if (value) {
+           return moment(String(value)).format('YYYY-MM-DD')
+          }
+      };
 const form = useForm({
-    title: '',
-    author: '',
-    genre: '',
-    isbn: '',
-    publisher: '',
-    published: '',
-    image: '',
-    description: '',
+    id:props.books.id,
+    title: props.books.title,
+    author: props.books.author,
+    genre: props.books.genre,
+    isbn: props.books.isbn,
+    publisher: props.books.publisher,
+    published: format_date(props.books.published),
+    image: props.books.image,
+    description: props.books.description,
 
 });
 
 const submit = () => {
-    form.post(route("book.store"));
+    form.put(route("book.update",props.books.id));
 };
 </script>
 <template>
