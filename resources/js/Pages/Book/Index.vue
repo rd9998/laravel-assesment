@@ -74,8 +74,8 @@ function destroy(id) {
                                     </tr>
                                 </thead>
                                 <tbody v-if="books.data.length > 0">
-                                    <tr v-for="book in books.data" :key="book.id">
-                                        <th scope="row">{{ book.id }}</th>
+                                    <tr v-for="(book, index) in books.data" :key="book.id">
+                                        <th scope="row">{{ index+1 }}</th>
                                         <td>{{ book.title }}</td>
                                         <td>{{ book.description }}</td>
                                         <td>{{ book.author }}</td>

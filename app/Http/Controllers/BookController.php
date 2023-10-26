@@ -26,7 +26,7 @@ class BookController extends Controller
     public function index()
     {
 
-        $books = Book::select(['id','title','description','author','genre','isbn','image','publisher','published'])->paginate(100);
+        $books = Book::select(['id','title','description','author','genre','isbn','image','publisher','published'])->orderBy('id', 'desc')->paginate(100);
         return Inertia::render('Book/Index',['books'=>$books]);
     }
 

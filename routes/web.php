@@ -20,7 +20,7 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/books', [HomeController::class,'index'])->name('books');
-Route::get('/book/{id}',[HomeController::class,'bookDetail'])->name('book.detail');
+Route::get('/book-detail/{id}',[HomeController::class,'bookDetail'])->name('book.detail');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
