@@ -9,15 +9,15 @@
 
 ## How to install Laravel-Assesment
 
-composer install / update
-npm install
-duplicate .env.example to .env
-change your config database
-php artisan key:generate
-php artisan migrate
-npm run dev
-php artisan serve
-php artisan db:seed --BookSeeder
+composer install / update <br>
+npm install <br>
+duplicate .env.example to .env <br>
+change your config database <br>
+php artisan key:generate <br>
+php artisan migrate <br>
+npm run dev <br>
+php artisan serve <br>
+php artisan db:seed --BookSeeder 
 
 
 And Here you go .
