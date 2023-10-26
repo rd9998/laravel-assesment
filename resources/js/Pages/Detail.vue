@@ -13,6 +13,9 @@ defineProps({
     },
 
 });
+const loadFallbackImage = (event) => {
+    event.target.src = "https://play-lh.googleusercontent.com/_tslXR7zUXgzpiZI9t70ywHqWAxwMi8LLSfx8Ab4Mq4NUTHMjFNxVMwTM1G0Q-XNU80";
+}
 </script>
 
 <template>
@@ -61,7 +64,7 @@ defineProps({
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" :src="book.image" width="250" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" :src="book.image" @error="loadFallbackImage" width="250" /> </div>
 
                         </div>
                     </div>
@@ -79,7 +82,7 @@ defineProps({
                             </div>
                             <div class="sizes mt-2">
                                 <h6 class="text-uppercase">Published:</h6>
-                                <span>{{ book.published}}</span>
+                                <span>{{ book.published }}</span>
                             </div>
                             <div class="sizes mt-2">
                                 <h6 class="text-uppercase">Genre:</h6>

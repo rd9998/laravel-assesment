@@ -97,9 +97,8 @@ const loadFallbackImage = (event) => {
 
                                             <div class="text-center">
                                                 <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2">
-                                                    <p class="mb-0" v-html="book.description.substring(0, 8) + '..'"></p>
+                                                    <p class="mb-0" v-html="book.description.substring(0, 100) + '..'"></p>
                                                 </div>
-
 
                                             </div>
 

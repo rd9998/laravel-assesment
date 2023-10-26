@@ -25,11 +25,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $from =  0;
-        $size = 100;
-        $response = $this->es_service->all($from, $size);
-        dd($response);
-        $books = Book::select(['id','title','description','author','genre','isbn','image','publisher','published'])->paginate(1);
+
+        $books = Book::select(['id','title','description','author','genre','isbn','image','publisher','published'])->paginate(100);
         return Inertia::render('Book/Index',['books'=>$books]);
     }
 

@@ -19,10 +19,10 @@ class HomeController extends Controller
         $books = Book::query()
         ->when(Request::input('search'), function ($query, $search) {
                         $query->where('title', 'like', '%' . $search . '%')
-                            ->OrWhere('author', 'like', '%' . $search . '%')
-                            ->OrWhere('genre', 'like', '%' . $search . '%')
-                            ->OrWhere('publisher', 'like', '%' . $search . '%')
-                            ->OrWhere('isbn', 'like', '%' . $search . '%');
+                            ->OrWhere('author', 'like',  $search )
+                            ->OrWhere('genre', 'like',  $search )
+                            ->OrWhere('publisher', 'like',  $search )
+                            ->OrWhere('isbn', 'like',  $search );
             })->paginate(100)->appends(Request::input());
         return Inertia::render('Welcome', [
             'books'=>$books,
